@@ -53,11 +53,11 @@ app.get('/ok', (req, res) =>{
 
 
 app.get('/student/:student_id', function(req, res) {
-    util.fakeStudentbyInfo(req.params.student_id, function (result) {
-        res.json(result);
-    });
+  util.findStudentbyId(req.params.student_id, function (result) {
+      //res.json(result);
+      res.send(result);
+  });
 });
-
 
 var port = process.env.PORT || 3000;
 
